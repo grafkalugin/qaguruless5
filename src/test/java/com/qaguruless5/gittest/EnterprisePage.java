@@ -1,4 +1,4 @@
-package com.qaguruless5.gitTest;
+package com.qaguruless5.gittest;
 
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
