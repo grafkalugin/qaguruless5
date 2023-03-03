@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class EnterpriseTest {
-    MainPage gh = new MainPage();
-    EnterprisePage ep = new EnterprisePage();
+    MainPage gitMain = new MainPage();
+    EnterprisePage gitEnterprise = new EnterprisePage();
 
     @BeforeAll
     public static void setUpAll() {
@@ -18,9 +18,8 @@ public class EnterpriseTest {
     }
     @Test
     public void enterprise() {
-        open("https://github.com/");
-        gh.solutionsButton.hover();
-        gh.enterpriseButton.click();
-        ep.enterpriseContent.shouldHave(text("Build like the best"));
+        gitMain.openMain();
+        gitMain.goToEnterprise();
+        gitEnterprise.checkEnterpriseLoad();
     }
 }
