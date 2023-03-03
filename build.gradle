@@ -35,7 +35,6 @@ test {
     useJUnitPlatform()
 }
 allure {
-    autoconfigure = true
     version = "${allureVersion}"
 
     useJUnit5 {
