@@ -20,21 +20,16 @@ public class MainPageTest {
 
     @Test
     public void drugndropFailed(){
-        open("https://the-internet.herokuapp.com/drag_and_drop");
-        //actions().dragAndDrop(gh.colomnA, gh.colomnB); //визуально никакие действия не наблюдаются, фигуры местами не меняются, ошибка при перемещении не возникает
-        //actions().dragAndDropBy(gh.colomnA, 250,0);//визуально никакие действия не наблюдаются, фигуры местами не меняются, ошибка при перемещении не возникает
-        //actions().clickAndHold(gh.colomnA).moveByOffset(250, 0).release().build().perform(); // переносимая фигура прилипает к оригинальному крусору
-        actions().clickAndHold(drugPage.colomnA).moveToElement(drugPage.colomnB).release().build().perform(); // переносимая фигура прилипает к оригинальному крусору
-        drugPage.colomnA.shouldHave(text("B"));
-        sleep(1000); // слип для визуального контроля теста
+        drugPage.openDrug();
+        drugPage.failedDrug();
+        drugPage.checkDrug();
     }
 
     @Test
     public void drugndropPassed(){
-        open("https://the-internet.herokuapp.com/drag_and_drop");
-        drugPage.colomnA.dragAndDropTo(drugPage.colomnB);// работает
-        drugPage.colomnA.shouldHave(text("B"));
-        sleep(1000); // слип для визуального контроля теста
+        drugPage.openDrug();
+        drugPage.succesDrug();
+        drugPage.checkDrug();
     }
 
 }
