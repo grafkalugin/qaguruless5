@@ -18,14 +18,14 @@ public class MainPageTest {
     }
 
     @Test
-    public void search() {
+    public void enterprise() {
         open("https://github.com/");
         gh.solutionsButton.hover();
         gh.enterpriseButton.click();
         gh.enterpriseContent.shouldHave(text("Build like the best"));
     }
-    @Test /*Failed*/
-    public void drugndropFirst(){
+    @Test
+    public void drugndropFailed(){
         open("https://the-internet.herokuapp.com/drag_and_drop");
         //actions().dragAndDrop(gh.colomnA, gh.colomnB); //визуально никакие действия не наблюдаются, фигуры местами не меняются, ошибка при перемещении не возникает
         //actions().dragAndDropBy(gh.colomnA, 250,0);//визуально никакие действия не наблюдаются, фигуры местами не меняются, ошибка при перемещении не возникает
@@ -36,7 +36,7 @@ public class MainPageTest {
     }
 
     @Test
-    public void drugndropSecond(){
+    public void drugndropPassed(){
         open("https://the-internet.herokuapp.com/drag_and_drop");
         gh.colomnA.dragAndDropTo(gh.colomnB);// работает
         gh.colomnA.shouldHave(text("B"));
